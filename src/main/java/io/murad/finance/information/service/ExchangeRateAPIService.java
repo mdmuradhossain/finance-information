@@ -17,9 +17,14 @@ public class ExchangeRateAPIService {
 
     private final String URL = "https://v6.exchangerate-api.com/v6/" + API_KEY + "/latest/USD";
 
-    public ExchangeRateUSD getExchangeRateUSD() {
-        ResponseEntity<ExchangeRateUSD> response = restTemplate.getForEntity(URL, ExchangeRateUSD.class);
+//    public ExchangeRateUSD getExchangeRateUSD() {
+//        ResponseEntity<ExchangeRateUSD> response = restTemplate.getForEntity(URL, ExchangeRateUSD.class);
+//
+//        return response.getBody();
+//    }
 
+    public String getExchangeRateUSD() {
+        ResponseEntity<String> response = restTemplate.getForEntity(URL, String.class);
         return response.getBody();
     }
 }
